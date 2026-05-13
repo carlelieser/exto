@@ -2,10 +2,29 @@
 
 A CLI tool for scraping torrent links from [ext.to](https://ext.to). Uses headless browser automation with Cloudflare bypass and OCR-based CAPTCHA solving.
 
+## Installation
+
+After building, link the CLI globally so you can run `exto` from anywhere:
+
+```bash
+npm link
+```
+
+Or run directly without linking:
+
+```bash
+node dist/index.js [options]
+```
+
 ## Prerequisites
 
 - **Node.js** 18+
 - **npm** 9+
+- **Camoufox browser binary** — download it before first use:
+
+    ```bash
+    npx camoufox-js fetch
+    ```
 
 ## Quick Start
 
@@ -19,9 +38,11 @@ npm run build
 ## Usage
 
 ```bash
-npm run dev -- [options]
-# or after building:
+exto [options]
+# or without linking:
 node dist/index.js [options]
+# or during development:
+npm run dev -- [options]
 ```
 
 ### Required Options
