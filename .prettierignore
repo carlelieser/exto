@@ -1,0 +1,4 @@
+node_modules
+dist
+*.traineddata
+package-lock.json
