@@ -102,7 +102,7 @@ export const collectLinks = async (page: Page, labelFilter?: string, limit?: num
 
         try {
             const [response] = await Promise.all([
-                page.waitForResponse((res) => res.url() === scriptURL, { timeout: 3000 }),
+                page.waitForResponse((res) => res.url() === scriptURL, { timeout: 5000 }),
                 magnetBtn.click(),
             ]);
 
