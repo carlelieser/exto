@@ -1,7 +1,7 @@
 # exto
 
 A CLI tool for scraping torrent links from [ext.to](https://ext.to). Uses headless browser automation with Cloudflare
-bypass and OCR-based CAPTCHA solving.
+bypass.
 
 ## Quick Start
 
