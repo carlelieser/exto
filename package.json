@@ -1,32 +1,33 @@
 {
-    "name": "exto",
-    "version": "1.0.0",
-    "description": "",
-    "main": "dist/index.js",
-    "type": "module",
-    "bin": {
-        "exto": "./dist/index.js"
-    },
-    "scripts": {
-        "build": "tsc",
-        "dev": "tsx src/index.ts",
-        "format": "prettier --write .",
-        "format:check": "prettier --check ."
-    },
-    "dependencies": {
-        "camoufox-js": "^0.10.2",
-        "csv-stringify": "^6.7.0",
-        "p-limit": "^7.3.0",
-        "tesseract.js": "^7.0.0",
-        "yargs": "^18.0.0",
-        "zod": "^4.4.3"
-    },
-    "devDependencies": {
-        "@types/node": "^25.7.0",
-        "@types/yargs": "^17.0.35",
-        "prettier": "^3.8.3",
-        "tsx": "^4.21.0",
-        "typescript": "^5.5.3"
-    },
-    "private": true
+	"name": "exto",
+	"version": "1.0.0",
+	"description": "",
+	"main": "dist/index.js",
+	"type": "module",
+	"bin": {
+		"exto": "./dist/index.js"
+	},
+	"scripts": {
+		"build": "tsc",
+		"dev": "tsx src/index.ts",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"postinstall": "npx camoufox-js fetch"
+	},
+	"dependencies": {
+		"camoufox-js": "^0.10.2",
+		"csv-stringify": "^6.7.0",
+		"p-limit": "^7.3.0",
+		"tesseract.js": "^7.0.0",
+		"yargs": "^18.0.0",
+		"zod": "^4.4.3"
+	},
+	"devDependencies": {
+		"@types/node": "^25.7.0",
+		"@types/yargs": "^17.0.35",
+		"prettier": "^3.8.3",
+		"tsx": "^4.21.0",
+		"typescript": "^5.5.3"
+	},
+	"private": true
 }
