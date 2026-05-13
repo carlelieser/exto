@@ -2,9 +2,9 @@
 import yargs from "yargs";
 import {hideBin} from "yargs/helpers";
 import pLimit from "p-limit";
-import {getEpisodeLinks} from "./crawler";
-import {saveResults} from "./storage";
-import {ScraperOptions} from "./types";
+import {getEpisodeLinks} from "./crawler.js";
+import {saveResults} from "./storage.js";
+import {ScraperOptions} from "./types.js";
 
 const argv = yargs(hideBin(process.argv))
 	.option("id", {type: "string", demandOption: true})

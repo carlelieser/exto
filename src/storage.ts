@@ -1,7 +1,7 @@
 import * as fs from "node:fs";
 import path from "node:path";
 import { stringify } from "csv-stringify/sync";
-import { Link, ScraperOptions } from "./types";
+import { Link, ScraperOptions } from "./types.js";
 
 export const saveResults = async (results: Array<Link>, options: ScraperOptions) => {
     if (!options.out && !options.dump) return;

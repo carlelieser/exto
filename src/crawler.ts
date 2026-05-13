@@ -1,8 +1,8 @@
 import { Camoufox, LaunchOptions } from "camoufox-js";
 import { type Page } from "playwright-core";
 import { createWorker, PSM, Worker } from "tesseract.js";
-import { Link, linkSchema } from "./types";
-import { wait } from "./utils";
+import { Link, linkSchema } from "./types.js";
+import { wait } from "./utils.js";
 
 const BASE_URL = "https://ext.to";
 
