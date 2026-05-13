@@ -73,7 +73,7 @@ npm run dev -- [options]
 **Scrape all Superfan episode links from Amazon for The Office S9:**
 
 ```bash
-npm run dev -- \
+exto \
   --id the-office-s3393 \
   --res 1080p \
   --season 9 \
@@ -88,7 +88,7 @@ npm run dev -- \
 **Scrape a single episode and dump to stdout as JSON:**
 
 ```bash
-npm run dev -- \
+exto \
   --id breaking-bad-s1213 \
   --res 1080p \
   --season 5 \
@@ -100,7 +100,7 @@ npm run dev -- \
 **Scrape episodes 1-10 concurrently (3 at a time):**
 
 ```bash
-npm run dev -- \
+exto \
   --id better-call-saul-s2073 \
   --res 720p \
   --season 1 \
