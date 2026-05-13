@@ -1,30 +1,7 @@
 # exto
 
-A CLI tool for scraping torrent links from [ext.to](https://ext.to). Uses headless browser automation with Cloudflare bypass and OCR-based CAPTCHA solving.
-
-## Installation
-
-After building, link the CLI globally so you can run `exto` from anywhere:
-
-```bash
-npm link
-```
-
-Or run directly without linking:
-
-```bash
-node dist/index.js [options]
-```
-
-## Prerequisites
-
-- **Node.js** 18+
-- **npm** 9+
-- **Camoufox browser binary** — download it before first use:
-
-    ```bash
-    npx camoufox-js fetch
-    ```
+A CLI tool for scraping torrent links from [ext.to](https://ext.to). Uses headless browser automation with Cloudflare
+bypass and OCR-based CAPTCHA solving.
 
 ## Quick Start
 
@@ -33,6 +10,7 @@ git clone https://github.com/carlelieser/exto.git
 cd exto
 npm install
 npm run build
+npm link
 ```
 
 ## Usage
@@ -48,25 +26,25 @@ npm run dev -- [options]
 ### Required Options
 
 | Option     | Description       | Example                 |
-| ---------- | ----------------- | ----------------------- |
+|------------|-------------------|-------------------------|
 | `--id`     | Show ID slug      | `the-office-s3393`      |
 | `--res`    | Resolution filter | `1080p`, `720p`, `480p` |
 | `--season` | Season number     | `9`                     |
 
 ### Optional Options
 
-| Option          | Description                                  | Default             |
-| --------------- | -------------------------------------------- | ------------------- |
-| `--start`       | Starting episode number                      | `1`                 |
-| `--end`         | Ending episode number                        | same as start       |
-| `--label`       | Regex filter for torrent labels              | none                |
-| `--limit`       | Max results per episode                      | none                |
-| `--format`      | Output format: `json`, `csv`, `raw`          | `json`              |
-| `--extract`     | Fields to extract: `label`, `href`, `magnet` | `label,href,magnet` |
-| `--out`         | Output file path                             | none                |
-| `--dump`        | Print results to stdout                      | `false`             |
-| `--concurrency` | Parallel episode processing                  | `1`                 |
-| `--headless`    | Run browser in headless mode                 | `false`             |
+| Option                     | Description                                  | Default             |
+|----------------------------|----------------------------------------------|---------------------|
+| `--start` (or `--episode`) | Starting episode number                      | `1`                 |
+| `--end`                    | Ending episode number                        | same as start       |
+| `--label`                  | Regex filter for torrent labels              | none                |
+| `--limit`                  | Max results per episode                      | none                |
+| `--format`                 | Output format: `json`, `csv`, `raw`          | `json`              |
+| `--extract`                | Fields to extract: `label`, `href`, `magnet` | `label,href,magnet` |
+| `--out`                    | Output file path                             | none                |
+| `--dump`                   | Print results to stdout                      | `false`             |
+| `--concurrency`            | Parallel episode processing                  | `1`                 |
+| `--headless`               | Run browser in headless mode                 | `false`             |
 
 ### Examples
 
@@ -92,7 +70,7 @@ exto \
   --id breaking-bad-s1213 \
   --res 1080p \
   --season 5 \
-  --start 14 \
+  --episode 14 \
   --dump \
   --format json
 ```
@@ -122,7 +100,8 @@ npm run format:check     # Check formatting
 ## How It Works
 
 1. Launches a headless browser via [Camoufox](https://github.com/daiyi1997/camoufox-js) with human-like behavior
-2. Navigates to ext.to episode pages and bypasses Cloudflare challenges using OCR ([Tesseract.js](https://github.com/naptha/tesseract.js))
+2. Navigates to ext.to episode pages and bypasses Cloudflare challenges using
+   OCR ([Tesseract.js](https://github.com/naptha/tesseract.js))
 3. Extracts torrent links, applies label filtering, and validates magnet URIs with [Zod](https://zod.dev/)
 4. Outputs results in JSON, CSV, or raw format
 
